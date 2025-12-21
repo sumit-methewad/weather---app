@@ -22,6 +22,8 @@ body::before {
   position: absolute;
   inset: 0;
   background: url('https://i.imgur.com/7b1XKxK.png');
+  background-size: cover;
+  background-position: centre;
   opacity: 0.15;
   animation: moveClouds 60s linear infinite;
 }
