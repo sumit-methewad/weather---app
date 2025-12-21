@@ -1,0 +1,147 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  overflow: hidden;
+}
+
+/* Animated clouds */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.imgur.com/7b1XKxK.png');
+  opacity: 0.15;
+  animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
+}
+
+.weather-card {
+  position: relative;
+  z-index: 1;
+  width: 360px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  color: #fff;
+  text-align: center;
+}
+
+.weather-card h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ffcc00;
+  font-weight: 600;
+}
+
+.search-box button:hover {
+  background: #ffdb4d;
+}
+
+.city {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.temp {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.condition {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.error {
+  margin-top: 15px;
+  color: #ffb3b3;
+  font-size: 14px;
+}
+
+img {
+  width: 80px;
+  margin: 10px auto;
+}
+
+/* ❄️ Cold smoke / fog effect */
+.fog {
+  position: fixed;
+  inset: 0;
+  background: url('https://i.imgur.com/cYQyYVx.png');
+  opacity: 0.25;
+  animation: fogMove 40s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fogMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
+}
+
+/* 🌧️ Rain animation */
+.rain {
+  position: fixed;
+  inset: 0;
+  background: url('https://i.imgur.com/NM7xKQk.png');
+  opacity: 0.35;
+  animation: rainFall 0.8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes rainFall {
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
+}
+
