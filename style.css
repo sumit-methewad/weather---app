@@ -21,9 +21,6 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('https://i.imgur.com/7b1XKxK.png');
-  background-size: cover;
-  background-position: centre;
   opacity: 0.15;
   animation: moveClouds 60s linear infinite;
 }
@@ -119,7 +116,6 @@ img {
 .fog {
   position: fixed;
   inset: 0;
-  background: url('https://i.imgur.com/cYQyYVx.png');
   opacity: 0.25;
   animation: fogMove 40s linear infinite;
   pointer-events: none;
@@ -135,7 +131,6 @@ img {
 .rain {
   position: fixed;
   inset: 0;
-  background: url('https://i.imgur.com/NM7xKQk.png');
   opacity: 0.35;
   animation: rainFall 0.8s linear infinite;
   pointer-events: none;
