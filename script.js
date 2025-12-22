@@ -46,7 +46,11 @@
             <div class="city">${data.location.name}, ${data.location.country}</div>
             <img src="${data.current.condition.icon}" />
             <div class="temp">${data.current.temp_c}°C</div>
-            <div class="condition">${data.current.condition.text}</div>
+            <div class="condition">${data.current.condition.text}
+ </div>// clear input after successful search
+document.getElementById("cityInput").value = "";
+document.getElementById("cityInput").focus();
+
             <div class="details">
               <div>Humidity<br>${data.current.humidity}%</div>
               <div>Wind<br>${data.current.wind_kph} km/h</div>
