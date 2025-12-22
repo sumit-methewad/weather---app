@@ -44,7 +44,7 @@
 
           weatherDiv.innerHTML = `
             <div class="city">${data.location.name}, ${data.location.country}</div>
-            <img src="${data.current.condition.icon}" />
+            <img src="${data.current.condition.icon}" >
             <div class="temp">${data.current.temp_c}°C</div>
             <div class="condition">${data.current.condition.text}
  </div>
