@@ -1,36 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather App </title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
   <link rel="stylesheet" href="style.css">
-
-  
-</head>
-<body>
-
-<div class="app">
-  <div class="card">
-    <h1>🌦 Weather App</h1>
-
-    <div class="search">
-      <input id="cityInput" placeholder="Enter city name" />
-      <button onclick="getCityWeather()">Search</button>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full w-full overflow-auto bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative">
+   <div class="weather-effect-container" id="weatherEffectContainer"></div>
+   <main class="relative z-10 max-w-6xl mx-auto px-4 py-8">
+    <header class="text-center mb-8">
+     <h1 id="appTitle" class="text-5xl font-bold text-white mb-2">Weather Forecast</h1>
+     <p class="text-blue-200 text-lg">Real-time Weather Information</p>
+    </header>
+    <div class="mb-8">
+     <form id="searchForm" class="max-w-2xl mx-auto"><label for="citySearch" class="sr-only">Search City</label>
+      <div class="flex gap-3 mb-4"><input type="text" id="citySearch" placeholder="Search city (e.g., Mumbai, Pune, Delhi)" class="flex-1 px-6 py-4 rounded-xl bg-white/20 backdrop-blur-md text-white placeholder-blue-200 border-2 border-white/30 focus:border-white focus:outline-none text-lg"> <button type="submit" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105"> 🔍 Search </button>
+      </div>
+      <div class="text-center"><button type="button" id="locationBtn" class="px-6 py-3 bg-white/20 backdrop-blur-md text-white rounded-xl font-semibold hover:bg-white/30 transition-all transform hover:scale-105 border-2 border-white/30"> 📍 Use My Location </button>
+      </div>
+     </form>
     </div>
-
-    <button class="location-btn" onclick="getLocationWeather()">
-      📍 Use My Location
-    </button>
-
-    <div id="current" class="center"></div>
-    <div id="forecast" class="forecast"></div>
-    <div id="error" class="error"></div>
+    <div id="loadingContainer" class="hidden text-center py-20">
+     <div class="loading-spinner inline-block">
+      <div class="w-20 h-20 border-8 border-white/30 border-t-white rounded-full animate-spin mx-auto"></div>
+      <p class="text-white text-xl mt-6">Loading weather data...</p>
+     </div>
+    </div>
+    <div id="errorContainer" class="hidden">
+     <div class="bg-red-500/20 backdrop-blur-md border-2 border-red-400 rounded-xl p-6 max-w-2xl mx-auto">
+      <p class="text-white text-center text-lg" id="errorMessage"></p>
+     </div>
+    </div>
+    <div id="weatherContainer" class="hidden space-y-6"></div>
+   </main>
   </div>
-</div>
 <script src="script.js"></script>
-</body>
-</html>
+ </body>
+ </html>
 
